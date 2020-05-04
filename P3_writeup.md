@@ -101,7 +101,7 @@ My final model consisted of the following layers:
 | Fully connected		| outputs 43        							|
 | Softmax				|												|
 
-The architecture is similar to the one used in [REFERENCE!!!!]. The architecture presented in the paper produced very high score on a similar task. This is the reason why it used here. The LeNET architecture presented in the course was unable to score high enough.
+The architecture is similar to the one used in \[1\]. The architecture presented in the paper produced very high score on a similar task. This is the reason why it used here. The LeNET architecture presented in the course was unable to score high enough.
 
 Dropout is considered and tested, but it didn't show any improvement. It just slowed down the learning and slightly decreased the validation set accuracy.
 
@@ -110,7 +110,7 @@ Dropout is considered and tested, but it didn't show any improvement. It just sl
 
 ##### Loss Function
 
-For the training of the model focal loss is used as presented in [REFERENCE!!!!]. It focuses on border cases, i.e. on the small number of samples that tend to be "indecisive", and puts less weight on samples that are "easy" to classify correctly. It led to around 1% bump in the validation set accuracy.
+For the training of the model focal loss is used as presented in \[2\]. It focuses on border cases, i.e. on the small number of samples that tend to be "indecisive", and puts less weight on samples that are "easy" to classify correctly. It led to around 1% bump in the validation set accuracy.
 
 ##### Optimizer
 
@@ -182,4 +182,10 @@ The highest probability is practically 1.00 for all except for the speed limit o
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+
+#### References
+
+\[1\]: Ciresan, Dan & Meier, Ueli & Masci, Jonathan & Schmidhuber, Jurgen. (2011). "A committee of neural networks for traffic sign classification". Proceedings of the International Joint Conference on Neural Networks. 1918-1921. 10.1109/IJCNN.2011.6033458.
+
+\[2\]: T. Lin, P. Goyal, R. Girshick, K. He and P. Dollár, "Focal Loss for Dense Object Detection," 2017 IEEE International Conference on Computer Vision (ICCV), Venice, 2017, pp. 2999-3007.
 
