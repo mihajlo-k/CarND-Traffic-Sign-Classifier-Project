@@ -62,7 +62,7 @@ As we can see from the figures above, the classes are not balanced. Some have al
 
 ##### Data Augmentation
 
-The number of samples in the training set is increased by artificially augmenting the data. This is done by randomly picking one sample from the existing set, making small alternation to it, and adding the newly created sample to the trainig dataset. This process is repeated untill the desired number of samples is reached.
+The number of samples in the training set is increased by artificially augmenting the data. This is done by randomly picking one sample from the existing set, making small alternation to it, and adding the newly created sample to the training dataset. This process is repeated until the desired number of samples is reached.
 
 Three types of alternation are done for each newly generated image: image rotation, translation and saturation scaling.
 
@@ -70,7 +70,7 @@ The training dataset is augmented in a way that each class has the same number o
 
 ##### Data Preprocessing
 
-First step is conversion to grayscale. Some early testing showed better results than training with the origianl color imges. The second step is adaptive histogram equalization of the images using CLAHE algorithm and cv2.createCLAHE function. This makes all the images similar in terms of contrast.
+First step is conversion to grayscale. Some early testing showed better results than training with the original color images. The second step is adaptive histogram equalization of the images using CLAHE algorithm and cv2.createCLAHE function. This makes all the images similar in terms of contrast.
 
 Here are some samples of augmented and preprocessed dataset:
 
@@ -101,7 +101,7 @@ My final model consisted of the following layers:
 | Fully connected		| outputs 43        							|
 | Softmax				|												|
 
-The architecture is similar to the one used in [REFERENCE!!!!]. The architecture presented inthe paper produced very high score on a similar task. This is the reason why it used here. The LeNET architecture presented in the course was unable to score high enough.
+The architecture is similar to the one used in [REFERENCE!!!!]. The architecture presented in the paper produced very high score on a similar task. This is the reason why it used here. The LeNET architecture presented in the course was unable to score high enough.
 
 Dropout is considered and tested, but it didn't show any improvement. It just slowed down the learning and slightly decreased the validation set accuracy.
 
@@ -110,7 +110,7 @@ Dropout is considered and tested, but it didn't show any improvement. It just sl
 
 ##### Loss Function
 
-For the training of the model focal loss is used as presented in [REFERENCE!!!!]. It focuses on border cases, i.e. on the small number of samples that tend to be "indicesive", and puts less weight on samples that are "easy" to test correctly. It led to around 1% bump in the validation set accuracy.
+For the training of the model focal loss is used as presented in [REFERENCE!!!!]. It focuses on border cases, i.e. on the small number of samples that tend to be "indecisive", and puts less weight on samples that are "easy" to classify correctly. It led to around 1% bump in the validation set accuracy.
 
 ##### Optimizer
 
@@ -149,7 +149,7 @@ Here is the confusion matrix of the testing set:
 
 ##### Discussion
 
-First approach that was tested was LeNET that didn't produce very high accuracies. My assumption is that this is because of the number of convolutional layers. For the handwritten character recognition 2 layers are probably enough, since 2 levels of features could be assumed. Traffic signs are more complex and probably have at least one higher level of features to be captured by additional convolutional layers.
+First approach that was tested was LeNET that didn't produce very high accuracies. My assumption is that this is because of the number of convolutional layers. For the handwritten character recognition 2 layers are probably enough, since 2 levels of features could be assumed. Traffic signs are more complex and probably have at least one higher level of features more to be captured by additional convolutional layers.
 
 Focal loss algorithm seemed as something that should be considered in any classification task, so it is used here, and produced the increase in accuracy.
 
@@ -182,5 +182,4 @@ The highest probability is practically 1.00 for all except for the speed limit o
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
 
